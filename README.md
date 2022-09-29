@@ -123,12 +123,11 @@ Our goal here is to estimate the homography between two images using point corre
 
 **Method:**
 
-1. Annotate 4 point correspondences $$(x_i, x_i')$$ between the normal image and the template image. We can define a homography $H$ such that 
+1. Annotate 4 point correspondences $(x_i, x_i')$ between the normal image and the template image. We can define a homography $H$ such that 
   $x_i' = Hx_i$
-2. $H$ is rank 8, and each point correspondence yields 2 constraints of the $$\begin{bmatrix} \mathbf{0} & -w'\mathbf{x}^T & y'\mathbf{x}^T \ 
-   w'\mathbf{x}
-   ^T & \mathbf{0} & -x'\mathbf{x}^T \end{bmatrix}h = 0$$
-5. This sets up a linear system of equatiosn $Ax=0$ and we can now solve this using SVD to find $x$ which constitutes $H$. 
+2. $H$ is rank 8, and each point correspondence yields 2 constraints of the form:
+$$\begin{bmatrix} \mathbf{0} & -w'\mathbf{x}^T & y'\mathbf{x}^T \ w'\mathbf{x}^T & \mathbf{0} & -x'\mathbf{x}^T \end{bmatrix}h = 0$$
+3. This sets up a linear system of equatiosn $Ax=0$ and we can now solve this using SVD to find $x$ which constitutes $H$. 
 
 **Command:**
 Place you images and template image under `data/homography` as a `.jpg` images. 
