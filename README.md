@@ -183,23 +183,23 @@ We evaluate angles (more precisely, the cosines) of 2 pairs of perpendicular lin
 correct the final affine rectification is.
 
 
-| Before rectification                               | After Rectification                    | Angles (Before) | Angles (After) |
-|----------------------------------------------------|----------------------------------------|-----------------|----------------|
-| ![](annotations/metric/tiles4_from_proj_test_lines.jpg) | ![](out/metric/tiles4_from_proj_test_lines.jpg) | -0.3650         | -0.0202      |
-| ![](annotations/metric/tiles4_from_proj_test_lines.jpg) | ![](out/metric/tiles4_from_proj_test_lines.jpg) | 0.2158         | -0.0098       |
-| ![](annotations/metric/tiles4_from_proj_test_lines.jpg) | ![](out/metric/tiles4_from_proj_test_lines.jpg) |  0.0404         | -0.0157        |
-| ![](annotations/metric/tiles5_from_proj_test_lines.jpg) | ![](out/metric/tiles5_from_proj_test_lines.jpg) | -0.04988        |  0.0422     |
-| ![](annotations/metric/tiles5_from_proj_test_lines.jpg) | ![](out/metric/tiles5_from_proj_test_lines.jpg) | -0.1605         | 0.0067        |
-| ![](annotations/metric/tiles5_from_proj_test_lines.jpg) | ![](out/metric/tiles5_from_proj_test_lines.jpg) | 0.18149        | 0.0828       |
-| ![](annotations/metric/chess1_from_proj_test_lines.jpg) | ![](out/metric/chess1_from_proj_test_lines.jpg) |  0.4844       | 0.0383       |
-| ![](annotations/metric/chess1_from_proj_test_lines.jpg) | ![](out/metric/chess1_from_proj_test_lines.jpg) | -0.0658        | 0.2317     |
-| ![](annotations/metric/chess1_from_proj_test_lines.jpg) | ![](out/metric/chess1_from_proj_test_lines.jpg) | -0.6411        | 0.0182        |
+| Before rectification                                     | After Rectification                              | Angles (Before) | Angles (After) |
+|----------------------------------------------------------|--------------------------------------------------|-----------------|----------------|
+| ![](annotations/metric/tiles4_from_proj_test_lines.jpg)  | ![](out/metric/tiles4_from_proj_test_lines.jpg)  | -0.3650         | -0.0202      |
+| ![](annotations/metric/tiles4_from_proj_test_lines.jpg)  | ![](out/metric/tiles4_from_proj_test_lines.jpg)  | 0.2158         | -0.0098       |
+| ![](annotations/metric/tiles4_from_proj_test_lines.jpg)  | ![](out/metric/tiles4_from_proj_test_lines.jpg)  |  0.0404         | -0.0157        |
+| ![](annotations/metric/tiles5_from_proj_test_lines.jpg)  | ![](out/metric/tiles5_from_proj_test_lines.jpg)  | -0.04988        |  0.0422     |
+| ![](annotations/metric/tiles5_from_proj_test_lines.jpg)  | ![](out/metric/tiles5_from_proj_test_lines.jpg)  | -0.1605         | 0.0067        |
+| ![](annotations/metric/tiles5_from_proj_test_lines.jpg)  | ![](out/metric/tiles5_from_proj_test_lines.jpg)  | 0.18149        | 0.0828       |
+| ![](annotations/metric/chess1_from_proj_test_lines.jpg)  | ![](out/metric/chess1_from_proj_test_lines.jpg)  |  0.4844       | 0.0383       |
+| ![](annotations/metric/chess1_from_proj_test_lines.jpg)  | ![](out/metric/chess1_from_proj_test_lines.jpg)  | -0.0658        | 0.2317     |
+| ![](annotations/metric/chess1_from_proj_test_lines.jpg)  | ![](out/metric/chess1_from_proj_test_lines.jpg)  | -0.6411        | 0.0182        |
 | ![](annotations/metric/london3_from_proj_test_lines.jpg) | ![](out/metric/london3_from_proj_test_lines.jpg) | -0.0583     | 0.0146      |
 | ![](annotations/metric/london3_from_proj_test_lines.jpg) | ![](out/metric/london3_from_proj_test_lines.jpg) | 0.0282         | 0.0197       |
 | ![](annotations/metric/london3_from_proj_test_lines.jpg) | ![](out/metric/london3_from_proj_test_lines.jpg) | 0.0437        | -0.0112      |
-| ![](annotations/metric/net_from_proj_lines.jpg)    | ![](out/metric/net_from_proj_lines.jpg)     | 0.1902      | 0.0891       |
-| ![](annotations/metric/net_from_proj_lines.jpg)    | ![](out/metric/net_from_proj_lines.jpg)     | -0.0690       |  0.0428        |
-| ![](annotations/metric/net_from_proj_lines.jpg)    | ![](out/metric/net_from_proj_lines.jpg)    | -0.3556       | 0.0032        |
+| ![](annotations/metric/net_from_proj_test_lines.jpg)     | ![](out/metric/net_from_proj_test_lines.jpg)     | 0.1902      | 0.0891       |
+| ![](annotations/metric/net_from_proj_test_lines.jpg)     | ![](out/metric/net_from_proj_test_lines.jpg)     | -0.0690       |  0.0428        |
+| ![](annotations/metric/net_from_proj_test_lines.jpg)     | ![](out/metric/net_from_proj_test_lines.jpg)     | -0.3556       | 0.0032        |
 
 
 ## Homography with Multiple Images
