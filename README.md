@@ -6,7 +6,7 @@ We will implement:
 2. Homography estimation between two images via interactively marking point correspondences. We will show a simple AR application of such an 
    estimation.
 
-## Affine Rectification 
+## (Q1) Affine Rectification 
 The goal here is to generate affinely correct warps for images that are captured through perspective cameras (assuming pinhole camera 
 model), with annotations of at least 2 pairs of parallel lines.
 
@@ -64,7 +64,7 @@ We evaluate angles (more precisely, the cosines) of 2 pairs of parallel lines be
 |![](annotations/affine/net_test_lines.jpg)|![](out/affine/net_test_lines.jpg)| 0.9997               | 1.0000       |
 |![](annotations/affine/net_test_lines.jpg)|![](out/affine/net_test_lines.jpg)| 0.9997              |  1.0000        |
 
-## Metric Rectification
+## (Q2) Metric Rectification
 
 The goal here is to generate metrically correct warps for images that are captured through perspective cameras (assume pinhole camera 
 model), with annotations of at least 2 pairs of perpendicular lines and affine rectified image obtained in the previous section.
@@ -118,7 +118,7 @@ correct the final affine rectification is.
 | ![](annotations/metric/net_test_lines.jpg)     |![](out/metric/net_test_lines.jpg)| -0.1035         | -0.0039        |
 | ![](annotations/metric/net_test_lines.jpg)     |![](out/metric/net_test_lines.jpg)| -0.1021        | -0.0036        |
 
-## Planar Homography from Point Correspondences
+## (Q3) Planar Homography from Point Correspondences
 
 Our goal here is to estimate the homography between two images using point correspondences. The point correspondences are marked interactively. 
 
@@ -144,7 +144,7 @@ python main.py --type homography --imgs "list of images" --template "template im
 | ![](data/homography/ghost.jpg)     |     ![](data/homography/mirror.jpg)     |     ![](annotations/homography/ghost_mirror.jpg)  | ![](out/homography/ghost_mirror.jpg)  |
 
 
-## Direct Metric Rectification
+## (Q4) Direct Metric Rectification
 
 We now metric-rectify the image directly from at least 5 pairs of perpendicular lines. More than 5 pairs can yield 
 more accurate results.
@@ -205,7 +205,7 @@ correct the final affine rectification is.
 | ![](annotations/metric/net_from_proj_test_lines.jpg)     | ![](out/metric/net_from_proj_test_lines.jpg)     | -0.3556       | 0.0032        |
 
 
-## Homography with Multiple Images
+## (Q5) Homography with Multiple Images
 Here we overlay 3 normal images on top of an image with perspective effect. I warp my own images on Times Square billboards.
 
 **Method:**
