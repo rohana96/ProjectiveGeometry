@@ -32,7 +32,7 @@ Here's an example:
    infinity $l
    {\infty} = [0, 0, 1]$. 
 4. We can now define a homography $H$ between the original line at infinity and its projection by $l_{\infty} = H ^{-T} l'{\infty}$. 
-5. Solving the above equation we arrive at the solution $ H = [[1, 0, 0], [0, 1, 0], [l1, l2, l3]]$ where $l'_{\infty} = l1, l2, l3$.
+5. Solving the above equation we arrive at the solution $H = [[1, 0, 0], [0, 1, 0], [l1, l2, l3]]$ where $l'_{\infty} = l1, l2, l3$.
 
 **Command:**
 
