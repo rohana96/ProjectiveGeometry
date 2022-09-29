@@ -22,12 +22,17 @@ Here's an example:
 
 **Method:**
 
-1. Annotate 2 pairs of lines which we know to be parallel in the real world (ideally which are not all parallel to each other). We know these meet 
-at the line at infinity.
-2. In the given image, a pair of "parallel" lines meet at a location. Find this point using $$l_1 \times l_2$$ for each lines. These 2 points lie on 
-   a line $$l'_{\infty} = p_1 \times p_2$$ which denotes the projection of the line at infinity.
-3. The homography $$H$$ should relate these 2 lines by $$l_{\infty} = H ^{-T} l'{\infty}$$ and we know that $$l{\infty} = [0, 0, 1]^T$$. Therefore, 
-   find such an H.
+1. Annotate 2 pairs of identifiable parallel  (in the real 3D world) lines - $l1$ and $l2$. The equation of each line comes from the cross 
+   product of two 
+   distinct points on it. 
+2. The input image has a perspective transform and therefore the projection of real world pair of parallel lines intersect at a finite point. This 
+   point can be written as $l_1 \times l_2$
+   for each pair of lines. 
+3. The points two points of intersection $p1$ and $p2$ lie on a line $l'_{\infty} = p_1 \times p_2$. This constitutes the projection of the line at 
+   infinity $l
+   {\infty} = [0, 0, 1]$. 
+4. We can now define a homography $H$ between the original line at infinity and its projection by $l_{\infty} = H ^{-T} l'{\infty}$. 
+5. Solving the above equation we arrive at the solution $ H = [[1, 0, 0], [0, 1, 0], [l1, l2, l3]]$ where $l'_{\infty} = l1, l2, l3$.
 
 **Command:**
 
