@@ -79,7 +79,8 @@ perpendicular lines.
 1. Annotate 2 pairs of identifiable orthogonal  (in the real 3D world) lines - $l1$ and $l2$ on the affine-rectified image. The equation of each line 
    comes from the cross product of two distinct points on it.
 2. Projection of orthogonal lines $l'$ and $m'$ are related by a conic $C^{*'}_{\infty}$ as $l' C^{*'}_{\infty} m' = 0$. For an affine rectified 
-   image, this conic has 3 degrees of freedom and each pair affords us two constraints. (Hence we annotated only 2 pairs of lines)
+   image, this conic has 3 degrees of freedom and each pair affords us one constraint. (We annotate only 2 pairs of lines as we need estimation 
+   only upto a scale)
 3. We can now create a system of linear equations of the form $Ax = 0$. This can be solved using linear least squares for $c$ using SVD.
 4. Using the relation $C^{'}_{\infty} = H C^{'}{\infty} H^T$ and $C^{*'}{\infty} = U \Sigma U^T$ (from SVD decomposition of $C^{*'}{\infty}$) and 
    we arrive at $H = \begin{bmatrix} \sqrt {\sigma_{1}^{-1}} & 0 & 0 \ 0 & \sqrt{\sigma_{2}^{-1}} & 0\ 0 & 0 & 1 \end{bmatrix} U^T$
@@ -122,11 +123,12 @@ Our goal here is to estimate the homography between two images using point corre
 
 **Method:**
 
-1. Establish 4 point correspondences $$(x_i, x_i')$$ between the 2 images. The homography $$H$$ will be such that (upto a scale) $$x_i' = Hx_i$$
-2. Therefore, we can solve this system of equations using the fact $$x_i' \times Hx_i = 0$$.
-3. For each correspondence, this results in 2 constraints of the form: $$\begin{bmatrix} \mathbf{0} & -w'\mathbf{x}^T & y'\mathbf{x}^T \ w'\mathbf{x}
+1. Annotate 4 point correspondences $$(x_i, x_i')$$ between the normal image and the template image. We can define a homography $H$ such that 
+  $x_i' = Hx_i$
+2. $H$ is rank 8, and each point correspondence yields 2 constraints of the $$\begin{bmatrix} \mathbf{0} & -w'\mathbf{x}^T & y'\mathbf{x}^T \ 
+   w'\mathbf{x}
    ^T & \mathbf{0} & -x'\mathbf{x}^T \end{bmatrix}h = 0$$
-4. Use SVD to find h (elements of H).
+5. This sets up a linear system of equatiosn $Ax=0$ and we can now solve this using SVD to find $x$ which constitutes $H$. 
 
 **Command:**
 Place you images and template image under `data/homography` as a `.jpg` images. 
@@ -152,12 +154,14 @@ We find images that have sufficient perspective and planar surfaces with atleast
 
 **Method:**
 
-1. Given an image, annotate 5 pairs of lines which we know to be perpendicular in the real-world (ideally which lead to different constraints).
-2. For one such pair of lines $$l'$$ and $$m'$$, we know that $$l' C^{*'}_{\infty} m' = 0$$. For a random image, this has 6 variables.
-3. By rearranging the terms, create a system of linear equations of the form $$Ac = 0$$ and solve for $$c$$ using SVD.
-4. We know that $$C^{'}_{\infty} = H C^{'}{\infty} H^T$$. Using SVD, $$C^{*'}{\infty}
-   = U \Sigma U^T$$ and therefore, $$H = \begin{bmatrix} \sqrt
-   {\sigma_{1}^{-1}} & 0 & 0 \ 0 & \sqrt{\sigma_{2}^{-1}} & 0\ 0 & 0 & 1 \end{bmatrix} U^T$$
+1. Annotate 5 pairs of identifiable orthogonal  (in the real 3D world) lines - $l1$ and $l2$ on the affine-rectified image. The equation of each line 
+   comes from the cross product of two distinct points on it.
+2. Projection of orthogonal lines $l'$ and $m'$ are related by a conic $C^{*'}_{\infty}$ as $l' C^{*'}_{\infty} m' = 0$. This conic has 6 degrees 
+   of freedom and each pair affords us one constraint. (We annotate only 5 pairs of lines as we need estimation 
+   only upto a scale)
+3. We can now create a system of linear equations of the form $Ax = 0$. This can be solved using linear least squares for $c$ using SVD.
+4. Using the relation $C^{'}_{\infty} = H C^{'}{\infty} H^T$ and $C^{*'}{\infty} = U \Sigma U^T$ (from SVD decomposition of $C^{*'}{\infty}$) and 
+   we arrive at $H = \begin{bmatrix} \sqrt {\sigma_{1}^{-1}} & 0 & 0 \ 0 & \sqrt{\sigma_{2}^{-1}} & 0\ 0 & 0 & 1 \end{bmatrix} U^T$
 
 
 **Command:**
