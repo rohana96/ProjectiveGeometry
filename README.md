@@ -23,8 +23,7 @@ Here's an example:
 **Method:**
 
 1. Annotate 2 pairs of identifiable parallel  (in the real 3D world) lines - $l1$ and $l2$. The equation of each line comes from the cross 
-   product of two 
-   distinct points on it. 
+   product of two distinct points on it. 
 2. The input image has a perspective transform and therefore the projection of real world pair of parallel lines intersect at a finite point. This 
    point can be written as $l_1 \times l_2$
    for each pair of lines. 
@@ -77,12 +76,13 @@ perpendicular lines.
 
 **Method:**
 
-1. Given an affine-rectified image, annotate 2 pairs of lines which we know to be perpendicular in the real-world (ideally which lead to different 
-constraints).
-2. For one such pair of lines $$l'$$ and $$m'$$, we know that $$l' C^{*'}_{\infty} m' = 0$$. For an affine-rectified image, this has 3 variables.
-3. By rearranging the terms, create a system of linear equations of the form $$Ac = 0$$ and solve for $$c$$ using SVD.
-4. We know that $$C^{'}_{\infty} = H C^{'}{\infty} H^T$$. Using SVD, $$C^{*'}{\infty} = U \Sigma U^T$$ and therefore, $$H = \begin{bmatrix} \sqrt
-   {\sigma_{1}^{-1}} & 0 & 0 \ 0 & \sqrt{\sigma_{2}^{-1}} & 0\ 0 & 0 & 1 \end{bmatrix} U^T$$
+1. Annotate 2 pairs of identifiable orthogonal  (in the real 3D world) lines - $l1$ and $l2$ on the affine-rectified image. The equation of each line 
+   comes from the cross product of two distinct points on it.
+2. Projection of orthogonal lines $l'$ and $m'$ are related by a conic $C^{*'}_{\infty}$ as $l' C^{*'}_{\infty} m' = 0$. For an affine rectified 
+   image, this conic has 3 degrees of freedom and each pair affords us two constraints. (Hence we annotated only 2 pairs of lines)
+3. We can now create a system of linear equations of the form $Ax = 0$. This can be solved using linear least squares for $c$ using SVD.
+4. Using the relation $C^{'}_{\infty} = H C^{'}{\infty} H^T$ and $C^{*'}{\infty} = U \Sigma U^T$ (from SVD decomposition of $C^{*'}{\infty}$) and 
+   we arrive at $H = \begin{bmatrix} \sqrt {\sigma_{1}^{-1}} & 0 & 0 \ 0 & \sqrt{\sigma_{2}^{-1}} & 0\ 0 & 0 & 1 \end{bmatrix} U^T$
 
 **Command:**
 Place you images under `data/rectification` as a `.jpg` images. 
