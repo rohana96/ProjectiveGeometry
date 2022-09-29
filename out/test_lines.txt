@@ -141,3 +141,83 @@ Rectification angles:  -0.039238447407261935
 Original angles:  0.6381986402172259
 Rectification angles:  -0.0284249576211134
 
+
+
+Metric Rectification: Angles
+Image: tiles4_from_proj
+---------------------
+292 345
+Original angles:  -0.365053637800803
+Rectification angles:  -0.020272295766134013
+
+
+Original angles:  0.21586512128748545
+Rectification angles:  -0.009898989593355953
+
+
+Original angles:  0.04044127320736814
+Rectification angles:  -0.015743384595713953
+
+
+Metric Rectification: Angles
+Image: tiles5_from_proj
+---------------------
+480 640
+Original angles:  -0.049885782107199135
+Rectification angles:  0.042262036816694035
+
+
+Original angles:  -0.1605021211652457
+Rectification angles:  0.006726314944179273
+
+
+Original angles:  0.1814949023071965
+Rectification angles:  0.08283909889782935
+
+
+Metric Rectification: Angles
+Image: chess1_from_proj
+---------------------
+300 426
+Original angles:  0.48446483547738156
+Rectification angles:  0.038385048276854565
+
+
+Original angles:  -0.06587834385243332
+Rectification angles:  0.23179557212346188
+
+
+Original angles:  -0.6411572877616865
+Rectification angles:  0.018230414424306035
+
+
+Metric Rectification: Angles
+Image: net_from_proj
+---------------------
+1920 2879
+Original angles:  -0.058359354094329734
+Rectification angles:  0.014689214261055579
+
+
+Original angles:  0.028223097885319813
+Rectification angles:  0.019720912548262335
+
+
+Original angles:  0.04374097738850582
+Rectification angles:  -0.011201959474427646
+
+
+Metric Rectification: Angles
+Image: london3_from_proj
+---------------------
+4032 3024
+Original angles:  0.19024215497065533
+Rectification angles:  0.08915980806767898
+
+
+Original angles:  -0.06909323292353436
+Rectification angles:  0.04285619933494935
+
+
+Original angles:  0.3556145233331079
+Rectification angles:  0.003255609903647929

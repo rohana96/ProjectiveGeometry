@@ -171,34 +171,39 @@ python main.py --type rectification --method direct_metric --imgs "list of image
 
 **Results:**
 
-| Input Image | Annotated perpendicular lines on input image | Annotated perpendicular lines on Affine-Rectified Image |               Metric-Rectified Image               |
-|:------------------------:|:-----------------------------------:|:---------------------------:|:----------------------------------------------:|
-| ![](data/rectification/tiles4.jpg)  | ![](annotations/metric/tiles4_affine_to_metric.jpg)  | ![](out/metric/tiles4_affine_rectified_anno.jpg)  |  ![](out/metric/tiles4_affine_to_metric.jpg)   |
-| ![](data/rectification/tiles5.jpg)  | ![](annotations/metric/tiles5_affine_to_metric.jpg)  | ![](out/metric/tiles5_affine_rectified_anno.jpg)  |  ![](out/metric/tiles5_affine_to_metric.jpg)   |
-| ![](data/rectification/tiles6.jpg)  | ![](annotations/metric/tiles6_affine_to_metric.jpg)  | ![](out/metric/tiles6_affine_rectified_anno.jpg)  |  ![](out/metric/tiles6_affine_to_metric.jpg)   |
-| ![](data/rectification/london3.jpg) | ![](annotations/metric/london3_affine_to_metric.jpg) | ![](out/metric/london3_affine_rectified_anno.jpg) |  ![](out/metric/london3_affine_to_metric.jpg)  |
-|  ![](data/rectification/net.jpg)   |  ![](annotations/metric/net_affine_to_metric.jpg)   |  ![](out/metric/net_affine_rectified_anno.jpg)   |    ![](out/metric/net_affine_to_metric.jpg)    |
+| Input Image | Annotated perpendicular lines on input image  |               Metric-Rectified Image               |
+|:------------------------:|:-----------------------------------:|:--------------------------:|
+| ![](data/rectification/tiles4.jpg)  | ![](annotations/metric/tiles4_from_proj.jpg)  | ![](out/metric/tiles4_from_proj.jpg)   |
+| ![](data/rectification/tiles5.jpg)  | ![](annotations/metric/tiles5_from_proj.jpg)  | ![](out/metric/tiles5_from_proj.jpg)   |
+| ![](data/rectification/chess1.jpg)  | ![](annotations/metric/chess1_from_proj.jpg)  | ![](out/metric/chess1_from_proj.jpg)   |
+| ![](data/rectification/london3.jpg) | ![](annotations/metric/london3_from_proj.jpg) | ![](out/metric/london3_from_proj.jpg)  |
+|  ![](data/rectification/net.jpg)   |  ![](annotations/metric/net_from_proj.jpg)   |  ![](out/metric/net_from_proj.jpg)    |
 
 We evaluate angles (more precisely, the cosines) of 2 pairs of perpendicular lines before and after rectification. This will show how close to 
 correct the final affine rectification is.
 
 
-| Before rectification                           | After Rectification | Angles (Before) | Angles (After) |
-|------------------------------------------------| -----------  |-----------------|----------------|
-| ![](annotations/metric/tiles4_test_lines.jpg)  |![](out/metric/tiles4_test_lines.jpg)| 0.3553          | -0.01785       |
-| ![](annotations/metric/tiles4_test_lines.jpg)  |![](out/metric/tiles4_test_lines.jpg)| 0.3442          | -0.0462        |
-| ![](annotations/metric/tiles5_test_lines.jpg)  |![](out/metric/tiles5_test_lines.jpg)| 0.0574          | -0.0414        |
-| ![](annotations/metric/tiles5_test_lines.jpg)  |![](out/metric/tiles5_test_lines.jpg)| -0.2445         | -0.0502        |
-| ![](annotations/metric/tiles6_test_lines.jpg)  |![](out/metric/tiles6_test_lines.jpg)|  0.0202        | -0.0245       |
-| ![](annotations/metric/tiles6_test_lines.jpg)  |![](out/metric/tiles6_test_lines.jpg)| 0.0235         | -0.0197        |
-| ![](annotations/metric/london3_test_lines.jpg) |![](out/metric/london3_test_lines.jpg)| 0.6254       | -0.0392       |
-| ![](annotations/metric/london3_test_lines.jpg) |![](out/metric/london3_test_lines.jpg)| 0.6382          | -0.0284        |
-| ![](annotations/metric/net_test_lines.jpg)     |![](out/metric/net_test_lines.jpg)| -0.1035         | -0.0039        |
-| ![](annotations/metric/net_test_lines.jpg)     |![](out/metric/net_test_lines.jpg)| -0.1021        | -0.0036        |
+| Before rectification                                    | After Rectification                    | Angles (Before) | Angles (After) |
+|---------------------------------------------------------|----------------------------------------|-----------------|----------------|
+| ![](annotations/metric/tiles4_from_proj_test_lines.jpg) | ![](out/metric/tiles4_from_proj_test_lines.jpg)  | -0.3650         | -0.0202      |
+| ![](annotations/metric/tiles4_from_proj_test_lines.jpg)           | ![](out/metric/tiles4_from_proj_test_lines.jpg)  | 0.2158         | -0.0098       |
+| ![](annotations/metric/tiles4_from_proj_test_lines.jpg)           | ![](out/metric/tiles4_from_proj_test_lines.jpg)  |  0.0404         | -0.0157        |
+| ![](annotations/metric/tiles5_from_proj_test_lines.jpg)           | ![](out/metric/tiles5_from_proj_test_lines.jpg)  | -0.04988        |  0.0422     |
+| ![](annotations/metric/tiles5_from_proj_test_lines.jpg)           | ![](out/metric/tiles5_from_proj_test_lines.jpg)  | -0.1605         | 0.0067        |
+| ![](annotations/metric/tiles5_from_proj_test_lines.jpg)           | ![](out/metric/tiles5_from_proj_test_lines.jpg)  | 0.18149        | 0.0828       |
+| ![](annotations/metric/chess1_from_proj_test_lines.jpg)           | ![](out/metric/chess1_from_proj_test_lines.jpg)  |  0.4844       | 0.0383       |
+| ![](annotations/metric/chess1_from_proj_test_lines.jpg)           | ![](out/metric/chess1_from_proj_test_lines.jpg)  | -0.0658        | 0.2317     |
+| ![](annotations/metric/chess1_from_proj_test_lines.jpg)           | ![](out/metric/chess1_from_proj_test_lines.jpg)  | -0.6411        | 0.0182        |
+| ![](annotations/metric/london3_from_proj_test_lines.jpg)          | ![](out/metric/london3_from_proj_test_lines.jpg) | -0.0583     | 0.0146      |
+| ![](annotations/metric/london3_from_proj_test_lines.jpg)          | ![](out/metric/london3_from_proj_test_lines.jpg) | 0.0282         | 0.0197       |
+| ![](annotations/metric/london3_from_proj_test_lines.jpg)          | ![](out/metric/london3_from_proj_test_lines.jpg) | 0.0437        | -0.0112      |
+| ![](annotations/metric/net_test_from_proj_lines.jpg)              | ![](out/metric/net_test_from_proj_lines.jpg)     | 0.1902      | 0.0891       |
+| ![](annotations/metric/net_test_from_proj_lines.jpg)              | ![](out/metric/net_test_from_proj_lines.jpg)     | -0.0690       |  0.0428        |
+| ![](annotations/metric/net_test_from_proj_lines.jpg)              | ![](out/metric/net_test_from_proj_lines.jpg)     | -0.3556       | 0.0032        |
 
 
 ## Homography with Multiple Images
-Here we overlay 3 normal images on top of an image with perspective effect.
+Here we overlay 3 normal images on top of an image with perspective effect. I warp my own images on Times Square billboards.
 
 **Method**
 The method is same as described under Planar Homography from Point Correspondences section.

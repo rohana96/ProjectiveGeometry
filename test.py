@@ -12,10 +12,9 @@ import cv2
 
 # ======== test rectification
 # affine_rect(force_annotate=True, compute_angles=True)
-# for imagename in ['tiles4', 'tiles5', 'tiles6', 'chess1', 'net', 'london3']:
-for imagename in ['london3']:
-    metric_rect_from_affine_rectified(force_annotate=False, imagename=imagename, compute_angles=True)
-    # metric_rect_from_proj(force_annotate=True, imagename=imagename)
+for imagename in ['tiles4', 'tiles5', 'chess1', 'net', 'london3']:
+    # metric_rect_from_affine_rectified(force_annotate=False, imagename=imagename, compute_angles=True)
+    metric_rect_from_proj(imagename=imagename, compute_angles=True)
 
 # ======== test sift
 # img1 = 'data/homography/cv_cover.jpg'

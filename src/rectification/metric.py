@@ -140,7 +140,7 @@ def metric_rect_from_proj(
 
     A = np.array(A)
     U, S, Vt = np.linalg.svd(A)
-    c = Vt[-1] / Vt[-1][-1]
+    c = Vt[-1] #/ #Vt[-1][-1]
     C = [[c[0], c[1] / 2, c[3] / 2],
          [c[1] / 2, c[2], c[4] / 2],
          [c[3] / 2, c[4] / 2, c[5]]]
@@ -161,5 +161,5 @@ def metric_rect_from_proj(
 
     if compute_angles:
         print("Metric Rectification: Angles")
-        transform_line(H, imagepath, annopath=annodir, outpath=outpath, imagename=imagename)
+        transform_line(H, imagepath, annopath=annodir, outpath=outpath, imagename=f"{imagename}_from_proj")
     return
