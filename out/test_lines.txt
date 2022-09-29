@@ -1,0 +1,143 @@
+Affine Rectification: Angles
+Image: tiles4
+---------------------
+292 345
+Original angles:  0.9805470477420182
+Rectification angles:  0.9998710079185149
+
+
+Original angles:  0.9999238514389226
+Rectification angles:  0.9999999845748008
+
+
+Metric Rectification: Angles
+Image: tiles4
+---------------------
+212 337
+Original angles:  0.35535086672907223
+Rectification angles:  -0.017850341738186216
+
+
+Original angles:  0.3442366064803172
+Rectification angles:  -0.0461811897860977
+
+
+Affine Rectification: Angles
+Image: tiles5
+---------------------
+480 640
+Original angles:  0.9999485874646322
+Rectification angles:  0.9999482757328321
+
+
+Original angles:  0.9836353351127611
+Rectification angles:  0.9999692898318373
+
+
+Metric Rectification: Angles
+Image: tiles5
+---------------------
+691 922
+Original angles:  0.05735251347344237
+Rectification angles:  -0.041437872961965
+
+
+Original angles:  -0.24449429070525255
+Rectification angles:  -0.05018716589947333
+
+
+Affine Rectification: Angles
+Image: tiles6
+---------------------
+462 616
+Original angles:  0.9995516806312006
+Rectification angles:  0.9999996879339947
+
+
+Original angles:  0.9997588843860784
+Rectification angles:  0.9999936886939511
+
+
+Metric Rectification: Angles
+Image: tiles6
+---------------------
+632 842
+Original angles:  0.02022681624274507
+Rectification angles:  -0.024595809108717958
+
+
+Original angles:  0.023590869855010212
+Rectification angles:  -0.019730742318617923
+
+
+Affine Rectification: Angles
+Image: chess1
+---------------------
+300 426
+Original angles:  -0.9993390703566672
+Rectification angles:  -0.9998832782633209
+
+
+Original angles:  0.9996987019308894
+Rectification angles:  0.999999997186676
+
+
+Metric Rectification: Angles
+Image: chess1
+---------------------
+143 461
+Original angles:  0.7018691673928277
+Rectification angles:  -0.055162778719404
+
+
+Original angles:  -0.7107669171175994
+Rectification angles:  -0.023467257121810397
+
+
+Affine Rectification: Angles
+Image: net
+---------------------
+1920 2879
+Original angles:  0.9997039372334017
+Rectification angles:  0.9999999556188317
+
+
+Original angles:  0.9997141182515784
+Rectification angles:  0.9999650079972824
+
+
+Metric Rectification: Angles
+Image: net
+---------------------
+2308 2724
+Original angles:  -0.10351705098881785
+Rectification angles:  -0.003994131763128893
+
+
+Original angles:  -0.1021354845669693
+Rectification angles:  -0.003674967061222397
+
+
+Affine Rectification: Angles
+Image: london3
+---------------------
+4032 3024
+Original angles:  0.9990334178465635
+Rectification angles:  0.9999751886122554
+
+
+Original angles:  0.9999934696623796
+Rectification angles:  0.9999999782110622
+
+
+Metric Rectification: Angles
+Image: london3
+---------------------
+1369 2875
+Original angles:  0.6254179573701358
+Rectification angles:  -0.039238447407261935
+
+
+Original angles:  0.6381986402172259
+Rectification angles:  -0.0284249576211134
+
