@@ -10,17 +10,17 @@ We will implement:
 The goal here is to generate affinely correct warps for images that are captured through perspective cameras (assuming pinhole camera 
 model), with annotations of at least 2 pairs of parallel lines.
 
-**Dataset Preparation:**
+**Dataset Preparation:** 
 
 We find images that have sufficient perspective and planar surfaces with atleast 2 identifiable pairs of parallel lines. 
 
 Here's an example:
 
- | Good Input  |                 Bad Input                 |
- |:-----------------------------------------:| :---------: |
+| Good Input  |                 Bad Input                 |
+|:-----------------------------------------:| :---------: |
  |  <img src="figures/good.jpg" height="200">  | <img src="figures/bad.jpg" height="200">  |
 
-**Method:**
+**Method:**  
 
 1. Annotate 2 pairs of identifiable parallel  (in the real 3D world) lines - $l1$ and $l2$. The equation of each line comes from the cross 
    product of two distinct points on it. 
@@ -33,13 +33,13 @@ Here's an example:
 4. We can now define a homography $H$ between the original line at infinity and its projection by $l_{\infty} = H ^{-T} l'{\infty}$. 
 5. Solving the above equation we arrive at the solution $H = [[1, 0, 0], [0, 1, 0], [l1, l2, l3]]$ where $l'_{\infty} = l1, l2, l3$.
 
-**Command:**
+**Command:**  
 
 Place you images under `data/rectification` as a `.jpg` images. 
 ```
 python main.py --type rectification --method affine --imgs "list of image names"
 ```
-**Results:**
+**Results:**  
 
 |       Input Image        |  Annotated Parallel Lines on Input  |   Affine-Rectified Output   |
 |:------------------------:|:-----------------------------------:|:---------------------------:|
@@ -69,12 +69,12 @@ We evaluate angles (more precisely, the cosines) of 2 pairs of parallel lines be
 The goal here is to generate metrically correct warps for images that are captured through perspective cameras (assume pinhole camera 
 model), with annotations of at least 2 pairs of perpendicular lines and affine rectified image obtained in the previous section.
 
-**Dataset Preparation:**
+**Dataset Preparation:**  
 
 We find images that have sufficient perspective and planar surfaces with atleast 2 identifiable pairs of parallel lines and 2 pairs of 
 perpendicular lines. 
 
-**Method:**
+**Method:**  
 
 1. Annotate 2 pairs of identifiable orthogonal  (in the real 3D world) lines - $l1$ and $l2$ on the affine-rectified image. The equation of each line 
    comes from the cross product of two distinct points on it.
@@ -85,12 +85,13 @@ perpendicular lines.
 4. Using the relation $C^{'}_{\infty} = H C^{'}{\infty} H^T$ and $C^{*'}{\infty} = U \Sigma U^T$ (from SVD decomposition of $C^{*'}{\infty}$) and 
    we arrive at $H = \begin{bmatrix} \sqrt {\sigma_{1}^{-1}} & 0 & 0 \ 0 & \sqrt{\sigma_{2}^{-1}} & 0\ 0 & 0 & 1 \end{bmatrix} U^T$
 
-**Command:**
+**Command:**  
+
 Place you images under `data/rectification` as a `.jpg` images. 
 ```
 python main.py --type rectification --method affine_to_metric  --imgs "list of image names"
 ```
-**Results:**
+**Results:**  
 
 | Input Image | Annotated perpendicular lines on input image | Annotated perpendicular lines on Affine-Rectified Image |               Metric-Rectified Image               |
 |:------------------------:|:-----------------------------------:|:---------------------------:|:----------------------------------------------:|
@@ -121,7 +122,7 @@ correct the final affine rectification is.
 
 Our goal here is to estimate the homography between two images using point correspondences. The point correspondences are marked interactively. 
 
-**Method:**
+**Method:**  
 
 1. Annotate 4 point correspondences $(x_i, x_i')$ between the normal image and the template image. We can define a homography $H$ such that 
   $x_i' = Hx_i$
@@ -129,13 +130,14 @@ Our goal here is to estimate the homography between two images using point corre
 $$\begin{bmatrix} \mathbf{0} & -w'\mathbf{x}^T & y'\mathbf{x}^T \ w'\mathbf{x}^T & \mathbf{0} & -x'\mathbf{x}^T \end{bmatrix}h = 0$$
 3. This sets up a linear system of equatiosn $Ax=0$ and we can now solve this using SVD to find $x$ which constitutes $H$. 
 
-**Command:**
+**Command:**  
+
 Place you images and template image under `data/homography` as a `.jpg` images. 
 ```
 python main.py --type homography --imgs "list of images" --template "template image name" --outname "output image name"
 ```
 **Results:**
-
+  
 | Normal Image                       |            Perspective Image            | Annotated corners in Perspective Image |        Warped and Overlaid Image         |
 |:-----------------------------------|:---------------------------------------:|:---------------------------------:|:----------------------------------------:|
 | ![](data/homography/desk-normal.jpg) | ![](data/homography/desk-perspective.jpg) |     ![](annotations/homography/book_table.jpg)  | ![](out/homography/book_table.jpg)  |
@@ -147,11 +149,11 @@ python main.py --type homography --imgs "list of images" --template "template im
 We now metric-rectify the image directly from at least 5 pairs of perpendicular lines. More than 5 pairs can yield 
 more accurate results.
 
-**Dataset Preparation:**
+**Dataset Preparation:**  
 
 We find images that have sufficient perspective and planar surfaces with atleast 5 identifiable pairs of perpendicular lines. 
 
-**Method:**
+**Method:**  
 
 1. Annotate 5 pairs of identifiable orthogonal  (in the real 3D world) lines - $l1$ and $l2$ on the affine-rectified image. The equation of each line 
    comes from the cross product of two distinct points on it.
@@ -163,7 +165,8 @@ We find images that have sufficient perspective and planar surfaces with atleast
    we arrive at $H = \begin{bmatrix} \sqrt {\sigma_{1}^{-1}} & 0 & 0 \ 0 & \sqrt{\sigma_{2}^{-1}} & 0\ 0 & 0 & 1 \end{bmatrix} U^T$
 
 
-**Command:**
+**Command:**  
+
 Place you images under `data/rectification` as a `.jpg` images. 
 ```
 python main.py --type rectification --method direct_metric --imgs "list of image names"
@@ -205,10 +208,12 @@ correct the final affine rectification is.
 ## Homography with Multiple Images
 Here we overlay 3 normal images on top of an image with perspective effect. I warp my own images on Times Square billboards.
 
-**Method**
+**Method:**
+  
 The method is same as described under Planar Homography from Point Correspondences section.
 
 **Command:**
+  
 Place you images and template image under `data/homography` as a `.jpg` images. 
 ```
 python main.py --type homography --imgs "list of images" --template "template image name" --outname "output image name"
